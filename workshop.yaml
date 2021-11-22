@@ -1,0 +1,65 @@
+ui:
+  enabled: true
+  port: 8080
+
+api:
+  enabled: true
+  port: 8081
+
+stream_engine:
+  enabled: true
+  seeds: redpanda-broker-1:29092, redpanda-broker-2:29092, redpanda-broker-3:29092
+
+inbound_connectors:
+  venues:
+    - name: bybit
+      enabled: true
+      api_keys: abc123, xyz987
+    # - name: bitmex
+    #   enabled: true
+    #   api_keys: abc123, xyz987
+    # - name: coinbase
+    #   enabled: true
+    #   api_keys: abc123, xyz987
+    # - name: binance
+    #   enabled: true
+    #   api_keys: abc123, xyz987
+    # - name: deribit
+    #   enabled: true
+    #   api_keys: abc123, xyz987
+    # - name: cme
+    #   enabled: true
+    #   api_keys: abc123, xyz987
+    # - name: alpaca
+    #   enabled: true
+    #   api_keys: abc123, xyz987
+    # - name: open_sea
+    #   enabled: true
+    #   api_keys: abc123, xyz987
+
+outbound_connectors:
+  venues:
+    - name: bybit
+      enabled: true
+      api_keys: def567
+    # - name: bitmex
+    #   enabled: true
+    #   api_keys: def567
+    # - name: coinbase
+    #   enabled: true
+    #   api_keys: def567
+    # - name: binance
+    #   enabled: true
+    #   api_keys: def567
+    # - name: deribit
+    #   enabled: true
+    #   api_keys: def567
+    # - name: cme
+    #   enabled: true
+    #   api_keys: def567
+    # - name: alpaca
+    #   enabled: true
+    #   api_keys: def567
+    # - name: open_sea
+    #   enabled: true
+    #   api_keys: def567

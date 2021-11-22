@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: TODO
+  name: TODO
+  namespace: pipeline
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: TODO
+  template:
+    metadata:
+      labels:
+        app: TODO
+    spec:
+      containers:
+        - image: TODO
+          name: run
+          command:
+            [
+              "/bin/sh",
+              "-c",
+              "TODO"
+            ]
+          resources:
+            limits:
+              cpu: "4"
+              memory: "4096Mi"
+            requests:
+              cpu: "250m"
+              memory: "50Mi"
+          env:
+            - name: "AWS_REGION"
+              value: "us-west-2"

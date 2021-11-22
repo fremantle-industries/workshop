@@ -1,0 +1,8 @@
+input TokenSetItemsTrait {
+  type: String!
+  value: String!
+}
+
+type Query {
+  getTokenSetBySlug(slug:String!): TokenSet
+}
