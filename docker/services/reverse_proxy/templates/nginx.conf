@@ -1,0 +1,94 @@
+worker_processes 2;
+
+events {
+    worker_connections  1024;
+    multi_accept        on;
+}
+
+http {
+    include         /etc/nginx/mime.types;
+    default_type    application/octet-stream;
+
+    sendfile    on;
+    resolver    ${REVERSE_PROXY_DNS_RESOLVER_ADDRESS};
+
+    server {
+        listen          ${REVERSE_PROXY_HTTP_PORT};
+        listen          [::]:${REVERSE_PROXY_HTTP_PORT};
+        server_name     ${MINIO_EXTERNAL_HOST};
+
+        location / {
+            set $upstream ${MINIO_INTERNAL_HOST}:${MINIO_HTTP_PORT};
+
+            proxy_pass              http://$upstream;
+            proxy_redirect          off;
+            proxy_set_header        Host $host;
+            proxy_http_version      1.1;
+            proxy_set_header        Upgrade $http_upgrade;
+            proxy_set_header        Connection "Upgrade";
+            proxy_set_header        X-Real-IP $remote_addr;
+            proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header        X-Forwarded-Host $server_name;
+        }
+    }
+
+    server {
+        listen          ${REVERSE_PROXY_HTTP_PORT};
+        listen          [::]:${REVERSE_PROXY_HTTP_PORT};
+        server_name     ${REDPANDA_CONSOLE_EXTERNAL_HOST};
+
+        location / {
+            set $upstream ${REDPANDA_CONSOLE_INTERNAL_HOST}:${REDPANDA_CONSOLE_HTTP_PORT};
+
+            proxy_pass              http://$upstream;
+            proxy_redirect          off;
+            proxy_set_header        Host $host;
+            proxy_http_version      1.1;
+            proxy_set_header        Upgrade $http_upgrade;
+            proxy_set_header        Connection "Upgrade";
+            proxy_set_header        X-Real-IP $remote_addr;
+            proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header        X-Forwarded-Host $server_name;
+        }
+    }
+
+    server {
+        listen          ${REVERSE_PROXY_HTTP_PORT};
+        listen          [::]:${REVERSE_PROXY_HTTP_PORT};
+        server_name     ${PROMETHEUS_EXTERNAL_HOST};
+
+        location / {
+            set $upstream ${PROMETHEUS_INTERNAL_HOST}:${PROMETHEUS_HTTP_PORT};
+
+            proxy_pass              http://$upstream;
+            proxy_redirect          off;
+            proxy_set_header        Host $host;
+            proxy_http_version      1.1;
+            proxy_set_header        Upgrade $http_upgrade;
+            proxy_set_header        Connection "Upgrade";
+            proxy_set_header        X-Real-IP $remote_addr;
+            proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header        X-Forwarded-Host $server_name;
+        }
+    }
+
+    server {
+        listen          ${REVERSE_PROXY_HTTP_PORT};
+        listen          [::]:${REVERSE_PROXY_HTTP_PORT};
+        server_name     ${GRAFANA_EXTERNAL_HOST};
+
+        location / {
+            set $upstream ${GRAFANA_INTERNAL_HOST}:${GRAFANA_HTTP_PORT};
+
+            proxy_pass              http://$upstream;
+            proxy_redirect          off;
+            proxy_set_header        Host $host;
+            proxy_http_version      1.1;
+            proxy_set_header        Upgrade $http_upgrade;
+            proxy_set_header        Connection "Upgrade";
+            proxy_set_header        X-Real-IP $remote_addr;
+            proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header        X-Forwarded-Host $server_name;
+        }
+    }
+}
