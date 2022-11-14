@@ -1,29 +1,45 @@
 version: '3.8'
 
 services:
-  workshop-ui:
+  web-ui:
     build:
       context: .
       dockerfile: ./docker/Dockerfile
-    environment:
-      - EXEC_BIN=server
-      - API_ENABLED=false
     depends_on:
-      - workshop-api
+      - web-api
+    environment:
+      - EXEC_BIN=server
+      - UI_ENABLED=true
 
-  workshop-api:
+  web-api:
     build:
       context: .
       dockerfile: ./docker/Dockerfile
     environment:
       - EXEC_BIN=server
-      - UI_ENABLED=false
+      - API_ENABLED=true
+
+  inbound-connectors-venues:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    environment:
+      - EXEC_BIN=server
+      - INBOUND_CONNECTORS_VENUES_ENABLED=true
+
+  outbound-connectors-venues:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    environment:
+      - EXEC_BIN=server
+      - OUTBOUND_CONNECTORS_VENUES_ENABLED=true
 
   # Root node is enabled by setting an empty seed [REDPANDA_SEEDS]
   # - Only 1 root node is allowed in the cluster
   redpanda-broker-1:
     build:
-      context: ./services/redpanda_broker
+      context: ./docker/services/redpanda_broker
     hostname: redpanda-broker-1
     volumes:
       - "redpanda_broker_1_data:/var/lib/redpanda/data"
@@ -34,7 +50,7 @@ services:
 
   redpanda-broker-2:
     build:
-      context: ./services/redpanda_broker
+      context: ./docker/services/redpanda_broker
     hostname: redpanda-broker-2
     volumes:
       - "redpanda_broker_2_data:/var/lib/redpanda/data"
@@ -46,7 +62,7 @@ services:
 
   redpanda-broker-3:
     build:
-      context: ./services/redpanda_broker
+      context: ./docker/services/redpanda_broker
     hostname: redpanda-broker-3
     volumes:
       - "redpanda_broker_3_data:/var/lib/redpanda/data"
@@ -58,7 +74,7 @@ services:
 
   redpanda-console:
     build:
-      context: ./services/redpanda_console
+      context: ./docker/services/redpanda_console
     depends_on:
       - redpanda-broker-1
       - redpanda-broker-2
@@ -70,7 +86,7 @@ services:
 
   reverse-proxy:
     build:
-      context: ./services/reverse_proxy
+      context: ./docker/services/reverse_proxy
     ports:
       - 80:8080
     environment:

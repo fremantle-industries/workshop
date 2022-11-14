@@ -1,3 +1,4 @@
 *.test
 *.out
-/server
+node_modules
+/bin

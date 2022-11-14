@@ -1,8 +1,10 @@
 default: test build.compose up
 
+configure:
+	./tools/configure
+
 test:
-	# go test ./...
-	@echo "TODO: test"
+	go test ./...
 
 build.compose:
 	docker compose build
@@ -10,8 +12,8 @@ build.compose:
 build.docker:
 	docker build . -t fremantle-industries/workshop
 
-build.server:
-	go build ./cmd/server
+build.bin:
+	go build -o ./bin ./main.go
 
 publish.docker:
 	docker push fremantle-industries/workshop
