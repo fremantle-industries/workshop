@@ -1,8 +1,10 @@
 default: test build.compose up
 
+configure:
+	./tools/configure
+
 test:
-	# go test ./...
-	@echo "TODO: test"
+	go test ./...
 
 build.compose:
 	docker compose build

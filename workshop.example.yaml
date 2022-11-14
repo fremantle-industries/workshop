@@ -8,7 +8,7 @@ api:
 
 stream_engine:
   enabled: true
-  seeds: redpanda-broker-1:29092, redpanda-broker-2:29092, redpanda-broker-3:29092
+  seeds: redpanda-broker-1:8080, redpanda-broker-2:8080, redpanda-broker-3:8080
 
 inbound_connectors:
   venues:

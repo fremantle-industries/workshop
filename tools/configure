@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp -i workshop.example.yaml workshop.yaml

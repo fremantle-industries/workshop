@@ -4,7 +4,7 @@ COPY ./go.mod ./go.mod
 COPY ./go.sum ./go.sum
 COPY ./cmd ./cmd
 COPY ./pkg ./pkg
-COPY ./workshop.yaml.example ./workshop.yaml
+COPY ./workshop.example.yaml ./workshop.yaml
 COPY ./Makefile ./Makefile
 RUN apk add --update make
 RUN make build.server
@@ -14,5 +14,4 @@ ENV EXEC_BIN=${EXEC_BIN:-server}
 ENV HTTP_PORT=${HTTP_PORT:-8080}
 WORKDIR /app
 COPY --from=BUILD /app/server /app/server
-EXPOSE ${HTTP_PORT}
 CMD exec /app/${EXEC_BIN}
