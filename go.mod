@@ -1,6 +1,6 @@
 module github.com/fremantle-industries/workshop
 
-go 1.17
+go 1.18
 
 require (
 	github.com/ergo-services/ergo v1.999.200
