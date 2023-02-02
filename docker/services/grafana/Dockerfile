@@ -1,4 +1,4 @@
-FROM grafana/grafana:7.4.0
+FROM grafana/grafana:9.3.6
 # default environment configuration that can be overridden at run time
 ENV GRAFANA_DATASOURCE_PROMETHEUS_URL=${GRAFANA_DATASOURCE_PROMETHEUS_URL:-http://prometheus:9090}
 

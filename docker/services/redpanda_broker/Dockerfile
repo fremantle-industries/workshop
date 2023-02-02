@@ -1,4 +1,4 @@
-FROM docker.redpanda.com/vectorized/redpanda:v12.20.6
+FROM docker.redpanda.com/vectorized/redpanda:v22.3.11
 ENV NODE_ID=${NODE_ID:-0}
 ENV KAFKA_ADDR_PLAINTEXT_HOST=${KAFKA_ADDR_PLAINTEXT_HOST:-0.0.0.0}
 ENV KAFKA_ADDR_PLAINTEXT_PORT=${KAFKA_ADDR_PLAINTEXT_PORT:-29092}

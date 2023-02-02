@@ -1,4 +1,4 @@
-FROM nginx:1.19.7-alpine
+FROM nginx:1.23.3-alpine
 # default environment configuration that can be overridden at run time
 ENV MINIO_EXTERNAL_HOST=${MINIO_EXTERNAL_HOST:-minio.localhost}
 ENV MINIO_INTERNAL_HOST=${MINIO_INTERNAL_HOST:-minio}
