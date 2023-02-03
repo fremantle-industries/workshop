@@ -78,6 +78,13 @@ services:
       - KAFKA_SCHEMA_REGISTRY_URLS=http://redpanda-broker-1:8081,http://redpanda-broker-2:8081,http://redpanda-broker-3:8081
       - REDPANDA_ADMIN_API_URLS=http://redpanda-broker-1:9644,http://redpanda-broker-2:9644,http://redpanda-broker-3:9644
 
+  clickhouse:
+    build:
+      context: ./docker/services/clickhouse
+    ports:
+      - 8123:8123
+      - 9000:9000
+
   grafana:
     build:
       context: ./docker/services/grafana

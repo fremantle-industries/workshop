@@ -72,12 +72,13 @@ to stop press Ctrl-C
 
 ## Endpoints
 
-| Name                       | Endpoint                                              |
-| ---------------------------| ------------------------------------------------------|
-| Grafana                    | [`grafana.localhost`](http://grafana.localhost)       |
-| Prometheus                 | [`prometheus.localhost`](http://prometheus.localhost) |
-| Redpanda Kafka Console     | [`redpanda.localhost`](http://redpanda.localhost)     |
-| MinIO Console              | [`minio.localhost`](http://minio.localhost)           |
+| Name                       | Endpoint                                                        |
+| ---------------------------| --------------------------------------------------------------- |
+| Grafana                    | [`grafana.localhost`](http://grafana.localhost)                 |
+| Prometheus                 | [`prometheus.localhost`](http://prometheus.localhost)           |
+| Redpanda Kafka Console     | [`redpanda.localhost`](http://redpanda.localhost)               |
+| Clickhouse                 | [`clickhouse.localhost/play`](http://clickhouse.localhost/play) |
+| MinIO Console              | [`minio.localhost`](http://minio.localhost)                     |
 
 ## Contributing
 
