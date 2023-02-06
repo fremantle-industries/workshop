@@ -78,6 +78,7 @@ to stop press Ctrl-C
 | Prometheus                 | [`prometheus.localhost`](http://prometheus.localhost)           |
 | Redpanda Kafka Console     | [`redpanda.localhost`](http://redpanda.localhost)               |
 | Clickhouse                 | [`clickhouse.localhost/play`](http://clickhouse.localhost/play) |
+| LakeFS                     | [`lakefs.localhost`](http://lakefs.localhost)                   |
 | MinIO Console              | [`minio.localhost`](http://minio.localhost)                     |
 
 ## Contributing
