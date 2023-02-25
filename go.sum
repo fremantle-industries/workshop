@@ -6,8 +6,6 @@ github.com/ergo-services/ergo v1.999.200 h1:c48zMCYcPx19iMnk+mYXX+h6k6U/fsiGQF4U
 github.com/ergo-services/ergo v1.999.200/go.mod h1:iQKxlBMaflSiCV8F+kVeCwwlJxjs78dTuiS8P/Bp/kk=
 github.com/fremantle-industries/tabletop v0.0.0-20211021145122-9964e613bb34 h1:WX2lnRxrbf5Ig9JXWy9ABPiGVlqdT7U11FBK/gm51GA=
 github.com/fremantle-industries/tabletop v0.0.0-20211021145122-9964e613bb34/go.mod h1:VnerD1qdbIGBiiDvwtoWHg5HD02NdRWgVDVVv77w0pE=
-github.com/fremantle-industries/tabletop v0.0.0-20211021182837-d0863e0a9045 h1:prvO3C4ab084li45I0nEtJD/V2EjPvpCCkjeHKGO2mE=
-github.com/fremantle-industries/tabletop v0.0.0-20211021182837-d0863e0a9045/go.mod h1:U7WoQV2l6euuHCWRhRQygGVec8X2FBlwvKAJCGj90Qg=
 github.com/gin-contrib/sse v0.1.0 h1:Y/yl/+YNO8GZSjAhjMsSuLt29uWRFHdHYUb5lYOV9qE=
 github.com/gin-contrib/sse v0.1.0/go.mod h1:RHrZQHXnP2xjPF+u1gW/2HnVO7nvIa9PG3Gm+fLHvGI=
 github.com/gin-gonic/gin v1.6.3 h1:ahKqKTFpO5KTPHxWZjEdPScmYaGtLo8Y4DMHoEsnp14=
@@ -85,8 +83,9 @@ golang.org/x/sys v0.0.0-20190412213103-97732733099d/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20200116001909-b77594299b42/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20201119102817-f84b799fce68/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210423082822-04245dca01da/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
-golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1 h1:SrN+KX8Art/Sf4HNj6Zcz06G7VEz+7w9tdXTPOZ7+l4=
 golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+golang.org/x/sys v0.1.0 h1:kunALQeHf1/185U1i0GOB/fy1IPRDDpuoOOqRReG57U=
+golang.org/x/sys v0.1.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1/go.mod h1:bj7SfCRtBDWHUb9snDiAeCFNEtKQo2Wmx5Cou7ajbmo=
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
 golang.org/x/text v0.3.6/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=

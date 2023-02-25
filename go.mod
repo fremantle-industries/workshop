@@ -18,6 +18,6 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/twmb/franz-go v1.11.3 // indirect
 	github.com/twmb/franz-go/pkg/kmsg v1.2.0 // indirect
-	golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1 // indirect
+	golang.org/x/sys v0.1.0 // indirect
 	nhooyr.io/websocket v1.8.7 // indirect
 )
